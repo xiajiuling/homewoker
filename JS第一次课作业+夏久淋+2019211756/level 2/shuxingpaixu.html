@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>属性排序</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        var arr = [{ name: 'xiaoming', age: 18 }, { name: 'zhangsan', age: 34 },
+        { name: 'lisi', age: 29 }, { name: 'wangwu', age: 24 }];
+        function sortby(key , way = true) {
+            return function (object1, object2) {
+                var value1 = object1[key , way = true];
+                var value2 = object2[key , way = false];
+                if (value2 < value1) {
+                    return 1;
+                } else if (value2 > value1) {
+                    return - 1;
+                } else {
+                    return 0;
+                }
+            }
+        }
+        console.log(arr.sort(sortby("age")));
+        console.log(arr.sort(sortby("name",false)));
+
+    </script>
+</body>
+
+</html>
